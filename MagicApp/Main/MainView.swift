@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  MagicApp
 //
 //  Created by Cường Trần on 17/08/2023.
@@ -7,212 +7,125 @@
 
 import SwiftUI
 
-struct TabbarView: View {
-    var body: some View {
-        TabView {
-            MainView()
-                .tabItem { 
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-            
-            ListUserView()
-                .tabItem { 
-                    Image(systemName: "person")
-                    Text("Users")
-                }
-            
-        }
-        .tint(.orange)
-    }
-}
-
-struct MainView: View {
-    @State private var fullScreen = false
+struct MainTabbarView: View {
+    @StateObject var mainViewVM = MainViewModel()
+    
     var body: some View {
         ZStack {
-            RadialGradient(gradient: mainBackroundColor,
-                           center: .top,
-                           startRadius: 5,
-                           endRadius: height)
-            .ignoresSafeArea()
-            VStack {
-                NavigationCustom
-            }
-        }
-    }
-    
-    var NavigationCustom: some View {
-        NavigationView {
-            Text("")
-            .navigationTitle("Homes")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: NavigationLink(destination: {
-                PersonalView()
-            }, label: {
-                Image(systemName: "bell.badge.fill")
-                    .foregroundColor(.black)
-                    .font(.system(size: normalFontSize))
-            }),
-                                trailing: NavigationLink(destination: {
-                
-            }, label: {
-                Image(systemName: "gear")
-                    .foregroundColor(.black)
-                    .font(.system(size: normalFontSize))
-            }))
-        }
-    }
-}
-
-struct UserModel: Identifiable {
-    let id = UUID().uuidString
-    let displayName: String
-    let follower: Int
-    let isVerified: Bool
-}
-
-struct ListUserView: View {
-    @State var isShowAlert = false
-    @State var isShowActionSheet = false
-    @State var textString = ""
-    
-    @StateObject var listUserVM: ListUserViewModel = ListUserViewModel()
-    
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(listUserVM.listUser) { user in
-                    HStack(spacing: 25) {
-                        Text(user.displayName.gk2TextName)
-                            .overlay { 
-                                Circle()
-                                    .stroke(lineWidth: 1)
-                                .fill(.gray)
-                                .frame(width: 40)
-                                .padding(-5)
-                            }
-                        
-                        VStack {
-                            HStack {
-                                Text(user.displayName)
-                                    .font(.title2)
-                                
-                                if user.isVerified {
-                                    Image(systemName: "checkmark.seal.fill")
-                                        .foregroundColor(.blue)
-                                }
-                            }
-                            Text("@\(user.displayName)")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
-                        
-                        Spacer()
-                        
-                        VStack {
-                            Text("\(user.follower)")
-                                .font(.title2)
-                            Text("follower")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
-                .padding(5)
-            }
-            .navigationTitle("Users")
-            .navigationBarTitleDisplayMode(.automatic)
-            .navigationBarItems(
-                trailing: ButtonMore
-            )
-            .actionSheet(isPresented: $isShowActionSheet, content: getActionSheet)
-            .alert(isPresented: $isShowAlert, content: getAlert)
-        }
-        .onAppear {
-//            listUserVM.getListUser()
-        }
-        .onDisappear {
-//            listUserVM.resetListUser()
-        }
-        .navigationBarHidden(true)
-    }
-    
-    
-    
-    var ButtonMore: some View {
-        Button(action: { 
-            isShowActionSheet.toggle()
-        }, label: { 
-            Image(systemName: "ellipsis")
-        }).foregroundColor(.black)
-    }
-    
-    func getAlert() -> Alert {
-        Alert(title: Text("Add"), 
-              message: Text("Do u want to add?"), primaryButton: .cancel(), secondaryButton: .default(Text("Add"), action: { 
-            listUserVM.appendNewUser()
-        }))
-    }
-    
-    func getActionSheet() -> ActionSheet {
-        let editAction: ActionSheet.Button = .destructive(Text("Edit")) { 
+            Color.clear.ignoresSafeArea()
             
-        }
-        let addAction: ActionSheet.Button = .default(Text("Add")) {
-            isShowAlert.toggle()
-        }
-        let cancelAction: ActionSheet.Button = .cancel()
-        
-        return ActionSheet(title: Text("Actions"),
-                    buttons: [editAction, addAction, cancelAction])
-    }
-}
-
-struct PersonalView: View {
-    @Environment (\.presentationMode) var backButton 
-    var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image(systemName: "person")
-                            .font(.largeTitle)
-                        Text("@name")
-                            .font(.title)
-                    }
-                    Text("This is my description")
+            if mainViewVM.currentUserSignedIn {
+                TabView {
+                    MainView()
+                        .tabItem {
+                            Image(systemName: "house.fill")
+                            Text("Home")
+                        }
+                        .badge("News")
+                    
+                    PersonalView()
+                        .tabItem {
+                            Image(systemName: "gear")
+                            Text("Setting")
+                        }
                 }
-                .padding(20)
-                .background(.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                Spacer()
-            }
-            .navigationTitle("Personals")
-            .navigationBarTitleDisplayMode(.automatic)
-            .navigationBarItems(leading: BackButton)
-            .contextMenu { 
-                Text("Text")
+                .tint(.indigo)
+            } else {
+                OnBoardingView()
             }
         }
-        .navigationBarHidden(true)
-    }
-    
-    var BackButton: some View {
-        Button(action: { 
-            backButton.wrappedValue.dismiss()
-        }, label: { 
-            Image(systemName: "arrow.backward")
-                .foregroundColor(.black)
-                .fontWeight(.bold)
-        })
+        .environmentObject(mainViewVM)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+//MARK: - MainView
+struct MainView: View {
+    @EnvironmentObject var mainViewVM: MainViewModel
+    
+    var body: some View {
+        ZStack {
+            NavigationView {
+                RadientBackgroundView
+                .ignoresSafeArea()
+                .navigationTitle("Homes")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(leading: Button(action: { 
+                    
+                }, label: { 
+                    Image(systemName: "bell.badge")
+                        .foregroundColor(.black)
+                        .font(.system(size: normalFontSize))
+                }),
+                                    trailing: Button(action: { 
+                    
+                }, label: { 
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.black)
+                        .font(.system(size: normalFontSize))
+                }))
+            }
+            
+            
+            Text("Sắp rồi!!! Chỉ còn...")
+            Spacer()
+        }
+    }
+}
+
+//MARK: - PersonalView
+struct PersonalView: View {
+    @EnvironmentObject var mainVM: MainViewModel
+    
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                RadientBackgroundView
+                    .ignoresSafeArea()
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) { 
+                    HStack {
+                        Text("hii")
+                            .font(.system(.title, weight: .medium))
+                        Text("\(mainVM.onboardingVM.currentUserName ?? "Empty")")
+                            .font(.system(.title, weight: .bold))
+                        Image(systemName: "chevron.down")
+                            .font(.caption)
+                    }
+                    .onTapGesture {
+                        mainVM.isPresentOptionSheet.toggle()
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            }
+        }
+        .sheet(isPresented: $mainVM.isPresentOptionSheet) {
+            ZStack {
+                Color.black.opacity(0.8).ignoresSafeArea()
+                    .presentationDetents([.fraction(0.3)])
+                VStack {
+                    
+                    Capsule()
+                        .frame(width: 50, height: 6)
+                        .foregroundColor(.gray)
+                        .padding(.vertical)
+                    Spacer()
+                    
+                    Text("Log out")
+                        .foregroundColor(.red)
+                        .onTapGesture {
+                            mainVM.onboardingVM.logout()
+                        }
+                }
+            }
+        }
+    }
+}
+
+//MARK: - MainView_Previews
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        TabbarView()
+        MainTabbarView()
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct MagicAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabbarView()
         }
     }
 }
