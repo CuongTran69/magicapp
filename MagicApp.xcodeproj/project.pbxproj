@@ -7,18 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		314D0D182AB83B4E00254725 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D0D172AB83B4E00254725 /* MainViewModel.swift */; };
+		31544B0A2AB1AA2300E419F2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31544B092AB1AA2300E419F2 /* OnboardingView.swift */; };
+		31544B0C2AB1AA3500E419F2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31544B0B2AB1AA3500E419F2 /* OnboardingViewModel.swift */; };
+		31544B0F2AB1AAE500E419F2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31544B0E2AB1AAE500E419F2 /* Constant.swift */; };
+		31544B172AB1D2A600E419F2 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31544B162AB1D2A600E419F2 /* Montserrat-ExtraBold.ttf */; };
+		3163CCBE2AC446E60044200D /* CountDownTetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3163CCBD2AC446E60044200D /* CountDownTetView.swift */; };
 		316F2DC82A8E110E0091EF3D /* MagicAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F2DC72A8E110E0091EF3D /* MagicAppApp.swift */; };
-		316F2DCA2A8E110E0091EF3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F2DC92A8E110E0091EF3D /* ContentView.swift */; };
+		316F2DCA2A8E110E0091EF3D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F2DC92A8E110E0091EF3D /* MainView.swift */; };
 		316F2DCC2A8E11100091EF3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316F2DCB2A8E11100091EF3D /* Assets.xcassets */; };
 		316F2DCF2A8E11100091EF3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316F2DCE2A8E11100091EF3D /* Preview Assets.xcassets */; };
+		31D822662AB35A98005BD028 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D822652AB35A98005BD028 /* UIColor+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		314D0D172AB83B4E00254725 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		31544B092AB1AA2300E419F2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		31544B0B2AB1AA3500E419F2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		31544B0E2AB1AAE500E419F2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		31544B132AB1D1E900E419F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		31544B162AB1D2A600E419F2 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3163CCBD2AC446E60044200D /* CountDownTetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTetView.swift; sourceTree = "<group>"; };
 		316F2DC42A8E110E0091EF3D /* MagicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		316F2DC72A8E110E0091EF3D /* MagicAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicAppApp.swift; sourceTree = "<group>"; };
-		316F2DC92A8E110E0091EF3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		316F2DC92A8E110E0091EF3D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		316F2DCB2A8E11100091EF3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		316F2DCE2A8E11100091EF3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		31D822652AB35A98005BD028 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +47,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31544B072AB1A9DA00E419F2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				316F2DC72A8E110E0091EF3D /* MagicAppApp.swift */,
+				316F2DC92A8E110E0091EF3D /* MainView.swift */,
+				314D0D172AB83B4E00254725 /* MainViewModel.swift */,
+				3163CCBD2AC446E60044200D /* CountDownTetView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		31544B082AB1A9F100E419F2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				31544B092AB1AA2300E419F2 /* OnboardingView.swift */,
+				31544B0B2AB1AA3500E419F2 /* OnboardingViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		31544B0D2AB1AAD700E419F2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				31544B0E2AB1AAE500E419F2 /* Constant.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		31544B102AB1D19200E419F2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				31544B162AB1D2A600E419F2 /* Montserrat-ExtraBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		316F2DBB2A8E110E0091EF3D = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +102,12 @@
 		316F2DC62A8E110E0091EF3D /* MagicApp */ = {
 			isa = PBXGroup;
 			children = (
-				316F2DC72A8E110E0091EF3D /* MagicAppApp.swift */,
-				316F2DC92A8E110E0091EF3D /* ContentView.swift */,
+				31D822642AB35A86005BD028 /* Extensions */,
+				31544B132AB1D1E900E419F2 /* Info.plist */,
+				31544B102AB1D19200E419F2 /* Fonts */,
+				31544B0D2AB1AAD700E419F2 /* Common */,
+				31544B082AB1A9F100E419F2 /* Login */,
+				31544B072AB1A9DA00E419F2 /* Main */,
 				316F2DCB2A8E11100091EF3D /* Assets.xcassets */,
 				316F2DCD2A8E11100091EF3D /* Preview Content */,
 			);
@@ -65,6 +120,14 @@
 				316F2DCE2A8E11100091EF3D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		31D822642AB35A86005BD028 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				31D822652AB35A98005BD028 /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				316F2DCF2A8E11100091EF3D /* Preview Assets.xcassets in Resources */,
+				31544B172AB1D2A600E419F2 /* Montserrat-ExtraBold.ttf in Resources */,
 				316F2DCC2A8E11100091EF3D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				316F2DCA2A8E110E0091EF3D /* ContentView.swift in Sources */,
+				31D822662AB35A98005BD028 /* UIColor+Ext.swift in Sources */,
+				31544B0C2AB1AA3500E419F2 /* OnboardingViewModel.swift in Sources */,
+				3163CCBE2AC446E60044200D /* CountDownTetView.swift in Sources */,
+				316F2DCA2A8E110E0091EF3D /* MainView.swift in Sources */,
+				31544B0A2AB1AA2300E419F2 /* OnboardingView.swift in Sources */,
 				316F2DC82A8E110E0091EF3D /* MagicAppApp.swift in Sources */,
+				31544B0F2AB1AAE500E419F2 /* Constant.swift in Sources */,
+				314D0D182AB83B4E00254725 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +339,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MagicApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MagicApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +368,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MagicApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MagicApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
