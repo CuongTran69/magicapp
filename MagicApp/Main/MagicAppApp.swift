@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct MagicAppApp: App {
+    @StateObject var mainViewVM = MainViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            CountDownTetView()
+            NavigationView {
+                MainTabbarView()
+            }
+            .environmentObject(mainViewVM)
         }
     }
 }

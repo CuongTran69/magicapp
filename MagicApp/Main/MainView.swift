@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct MainTabbarView: View {
-    @StateObject var mainViewVM = MainViewModel()
+    @EnvironmentObject var mainVM: MainViewModel
     
     var body: some View {
         ZStack {
             Color.clear.ignoresSafeArea()
             
-            if mainViewVM.currentUserSignedIn {
+            if mainVM.currentUserSignedIn {
                 TabView {
                     MainView()
                         .tabItem {
@@ -34,7 +34,6 @@ struct MainTabbarView: View {
                 OnBoardingView()
             }
         }
-        .environmentObject(mainViewVM)
     }
 }
 
