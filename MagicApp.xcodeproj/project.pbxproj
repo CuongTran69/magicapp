@@ -17,6 +17,10 @@
 		316F2DCA2A8E110E0091EF3D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F2DC92A8E110E0091EF3D /* MainView.swift */; };
 		316F2DCC2A8E11100091EF3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316F2DCB2A8E11100091EF3D /* Assets.xcassets */; };
 		316F2DCF2A8E11100091EF3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316F2DCE2A8E11100091EF3D /* Preview Assets.xcassets */; };
+		319199632AD40373005D0C34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319199622AD40373005D0C34 /* NetworkManager.swift */; };
+		319199652AD404EF005D0C34 /* VideoYoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319199642AD404EF005D0C34 /* VideoYoutubeView.swift */; };
+		31D001852AD5666900BF94BE /* VideoYoutubeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D001842AD5666900BF94BE /* VideoYoutubeVM.swift */; };
+		31D001872AD5692600BF94BE /* VideoYoutubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D001862AD5692600BF94BE /* VideoYoutubeModel.swift */; };
 		31D822662AB35A98005BD028 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D822652AB35A98005BD028 /* UIColor+Ext.swift */; };
 		98C58CFF4A8F45A6A87241FD /* Pods_MagicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABA1C1DFA1DEA1D1ADB9EFB /* Pods_MagicApp.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +38,10 @@
 		316F2DC92A8E110E0091EF3D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		316F2DCB2A8E11100091EF3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		316F2DCE2A8E11100091EF3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		319199622AD40373005D0C34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		319199642AD404EF005D0C34 /* VideoYoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoYoutubeView.swift; sourceTree = "<group>"; };
+		31D001842AD5666900BF94BE /* VideoYoutubeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoYoutubeVM.swift; sourceTree = "<group>"; };
+		31D001862AD5692600BF94BE /* VideoYoutubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoYoutubeModel.swift; sourceTree = "<group>"; };
 		31D822652AB35A98005BD028 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		73B996570D269BB8C0AF5F4E /* Pods-MagicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicApp.release.xcconfig"; path = "Target Support Files/Pods-MagicApp/Pods-MagicApp.release.xcconfig"; sourceTree = "<group>"; };
 		772C13B032317BBC295AC789 /* Pods-MagicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicApp.debug.xcconfig"; path = "Target Support Files/Pods-MagicApp/Pods-MagicApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +117,8 @@
 		316F2DC62A8E110E0091EF3D /* MagicApp */ = {
 			isa = PBXGroup;
 			children = (
+				31D001832AD5663A00BF94BE /* VideoYoutubeView */,
+				319199612AD40367005D0C34 /* Serivces */,
 				31D822642AB35A86005BD028 /* Extensions */,
 				31544B132AB1D1E900E419F2 /* Info.plist */,
 				31544B102AB1D19200E419F2 /* Fonts */,
@@ -129,6 +139,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		319199612AD40367005D0C34 /* Serivces */ = {
+			isa = PBXGroup;
+			children = (
+				319199622AD40373005D0C34 /* NetworkManager.swift */,
+			);
+			path = Serivces;
+			sourceTree = "<group>";
+		};
+		31D001832AD5663A00BF94BE /* VideoYoutubeView */ = {
+			isa = PBXGroup;
+			children = (
+				319199642AD404EF005D0C34 /* VideoYoutubeView.swift */,
+				31D001842AD5666900BF94BE /* VideoYoutubeVM.swift */,
+				31D001862AD5692600BF94BE /* VideoYoutubeModel.swift */,
+			);
+			path = VideoYoutubeView;
+			sourceTree = "<group>";
+		};
 		31D822642AB35A86005BD028 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +171,6 @@
 				772C13B032317BBC295AC789 /* Pods-MagicApp.debug.xcconfig */,
 				73B996570D269BB8C0AF5F4E /* Pods-MagicApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -270,14 +297,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319199632AD40373005D0C34 /* NetworkManager.swift in Sources */,
 				31D822662AB35A98005BD028 /* UIColor+Ext.swift in Sources */,
 				31544B0C2AB1AA3500E419F2 /* OnboardingViewModel.swift in Sources */,
 				3163CCBE2AC446E60044200D /* CountDownTetView.swift in Sources */,
+				319199652AD404EF005D0C34 /* VideoYoutubeView.swift in Sources */,
 				316F2DCA2A8E110E0091EF3D /* MainView.swift in Sources */,
 				31544B0A2AB1AA2300E419F2 /* OnboardingView.swift in Sources */,
+				31D001872AD5692600BF94BE /* VideoYoutubeModel.swift in Sources */,
 				316F2DC82A8E110E0091EF3D /* MagicAppApp.swift in Sources */,
 				31544B0F2AB1AAE500E419F2 /* Constant.swift in Sources */,
 				314D0D182AB83B4E00254725 /* MainViewModel.swift in Sources */,
+				31D001852AD5666900BF94BE /* VideoYoutubeVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +446,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,6 +477,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

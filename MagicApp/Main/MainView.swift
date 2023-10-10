@@ -43,27 +43,31 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            NavigationView {
-                RadientBackgroundView
-                .ignoresSafeArea()
-                .navigationTitle("Homes")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(leading: Button(action: { 
-                    
-                }, label: { 
-                    Image(systemName: "bell.badge")
-                        .foregroundColor(.black)
-                        .font(.system(size: normalFontSize))
-                }),
-                                    trailing: Button(action: { 
-                    
-                }, label: { 
-                    Image(systemName: "info.circle")
-                        .foregroundColor(.black)
-                        .font(.system(size: normalFontSize))
-                }))
+            VStack {
+                NavigationView {
+                    RadientBackgroundView
+                        .ignoresSafeArea()
+                        .navigationTitle("Homes")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarItems(leading: Button(action: { 
+                            
+                        }, label: { 
+                            Image(systemName: "bell.badge")
+                                .foregroundColor(.black)
+                                .font(.system(size: normalFontSize))
+                        }),
+                                            trailing: Button(action: { 
+                            
+                        }, label: { 
+                            Image(systemName: "info.circle")
+                                .foregroundColor(.black)
+                                .font(.system(size: normalFontSize))
+                        }))
+                }
+                .frame(maxWidth: .infinity, maxHeight: 50)
+                Spacer()
+                VideoYoutubeView()
             }
-            CountDownTetView()
         }
     }
 }
@@ -119,8 +123,8 @@ struct SettingView: View {
 }
 
 //MARK: - MainView_Previews
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabbarView()
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainTabbarView()
+//    }
+//}
