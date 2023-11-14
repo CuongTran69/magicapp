@@ -50,7 +50,7 @@ extension OnBoardingView {
             .font(.headline)
             .fontWeight(.bold)
             .frame(maxWidth: .infinity, maxHeight: 48)
-            .background(.white)
+            .background(Color(UIColor.systemBackground))
             .cornerRadius(10)
             .onTapGesture {
                 onboardingVM.onNextScreen()
@@ -63,7 +63,7 @@ extension OnBoardingView {
             .font(.headline)
             .fontWeight(.bold)
             .frame(width: 70, height: 48)
-            .background(.white)
+            .background(Color(UIColor.systemBackground))
             .cornerRadius(10)
             .onTapGesture {
                 onboardingVM.onPreviousScreen()
@@ -74,20 +74,20 @@ extension OnBoardingView {
     var welcomeView: some View {
         VStack {
             Spacer()
-            Text("Book Worm")
+            Text("Magic App")
                 .frame(width: width)
                 .font(.custom("Montserrat-ExtraBold", size: 30))
                 .fontWeight(.medium)
                 .foregroundColor(.white)
             
-            Image(systemName: "books.vertical")
+            Image(systemName: "shared.with.you")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
-                .foregroundColor(.cyan.opacity(0.5))
+                .foregroundColor(.black.opacity(0.8))
             
-            Text("Unlock the world of books with BookRead. Sign in to access your personalized reading experience, discover new books, and track your literary adventures. Join our community of readers and dive into a world of stories and knowledge.")
-                .foregroundColor(.black)
+            Text("Everything")
+                .foregroundColor(.white)
                 .font(.title3)
                 .bold()
                 .italic()
@@ -112,7 +112,7 @@ extension OnBoardingView {
                 .focused($isFocusTextField)
                 .padding(10)
                 .frame(width: width - 20, height: 50)
-                .background(.white)
+                .background(Color(UIColor.systemBackground))
                 .cornerRadius(10)
                 .onChange(of: onboardingVM.userName) { text in
                     onboardingVM.checkHiddenErrorLabel(isShow: text.count < 3)
