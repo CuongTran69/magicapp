@@ -14,17 +14,19 @@ struct VideoYoutubeView: View {
     @StateObject var vm = VideoYoutubeVM()
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(vm.videos) { video in
-                    VideoItemView(videoModel: video)
-                }
-            }
+        List(vm.videos, id: \.videoId) { data in
+            VideoItemView(videoModel: data)
+                .overlay(NavigationLink(destination: VideoPlayerView(videoId: data.videoId)
+                    .frame(maxWidth: .infinity, maxHeight: 250), label: {
+                    EmptyView()
+                }))
+            .listRowSeparator(.hidden)
         }
-        .padding()
+        .scrollIndicators(.hidden)
         .onAppear {
             vm.fetchData()
         }
+        .alert(vm.errorString, isPresented: $vm.isShowError, actions: {})
         .environmentObject(vm)
     }
 }
@@ -32,13 +34,14 @@ struct VideoYoutubeView: View {
 struct VideoItemView: View {
     @EnvironmentObject var vm   : VideoYoutubeVM
     let videoModel              : VideoYoutubeModel
+    @State var currentAmount    : CGFloat = 0
     
     var body: some View {
         VStack(alignment: .leading) {
             AsyncImage(url: videoModel.thumbnailURL) { returnImage in
                 returnImage
                     .resizable()
-                    .frame(maxWidth: .infinity, maxHeight: 250)
+                    .frame(maxHeight: 250)
                     .cornerRadius(20)
             } placeholder: { 
                 ProgressView()
@@ -61,6 +64,7 @@ struct VideoItemView: View {
                         .bold()
                     HStack {
                         Text("\(videoModel.channelTitle)")
+                            .bold()
                         Image(systemName: "eye.fill")
                         Text("\(videoModel.views) views")
                     }
@@ -85,8 +89,8 @@ struct VideoPlayerView: UIViewRepresentable {
     }
 }
 
-struct VideoYoutubeView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoYoutubeView()
-    }
-} 
+//struct VideoYoutubeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VideoYoutubeView()
+//    }
+//} 

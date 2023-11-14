@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoYoutubeModel: Identifiable {
+struct VideoYoutubeModel: Identifiable, Codable, Hashable {
     let id: String
     let channelId: String
     let videoId: String

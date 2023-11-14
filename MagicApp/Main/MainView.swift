@@ -33,6 +33,8 @@ struct MainTabbarView: View {
             } else {
                 OnBoardingView()
             }
+            
+//            RoundedRectangle
         }
     }
 }
@@ -43,21 +45,24 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
+            RadientBackgroundView
+            .ignoresSafeArea()
+            
             VStack {
                 NavigationView {
                     RadientBackgroundView
                         .ignoresSafeArea()
                         .navigationTitle("Homes")
                         .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarItems(leading: Button(action: { 
-                            
+                        .navigationBarItems(leading: Button(action: {
+                            //todo
                         }, label: { 
                             Image(systemName: "bell.badge")
                                 .foregroundColor(.black)
                                 .font(.system(size: normalFontSize))
                         }),
-                                            trailing: Button(action: { 
-                            
+                                            trailing: Button(action: {
+                            //todo
                         }, label: { 
                             Image(systemName: "info.circle")
                                 .foregroundColor(.black)
@@ -66,13 +71,13 @@ struct MainView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 50)
                 Spacer()
-                VideoYoutubeView()
+                UtilitiesListView()
             }
         }
     }
 }
 
-//MARK: - PersonalView
+//MARK: - Setting View
 struct SettingView: View {
     @EnvironmentObject var mainVM: MainViewModel
     

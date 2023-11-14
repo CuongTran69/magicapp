@@ -7,6 +7,7 @@ target 'MagicApp' do
 
   pod 'PromiseKit'
   pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'Alamofire'
   pod 'youtube-ios-player-helper-swift'
   # Pods for MagicApp

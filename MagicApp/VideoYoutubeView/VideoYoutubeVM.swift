@@ -7,10 +7,13 @@
 
 import SwiftUI
 import PromiseKit
+import RxSwift
 
 class VideoYoutubeVM: ObservableObject {
-    @Published var videos: [VideoYoutubeModel] = []
+    @Published var videos       : [VideoYoutubeModel] = []
     @Published var avatarChannel: String = ""
+    @Published var isShowError  = false
+    var errorString             = ""
     
     func fetchData() {
         firstly {
@@ -22,8 +25,10 @@ class VideoYoutubeVM: ObservableObject {
         }
         .done { [weak self] avatar in
             self?.avatarChannel = avatar
-        }.catch { error in
-            print("Error: \(error)")
+        }
+        .catch { [weak self] error in
+            self?.isShowError.toggle()
+            self?.errorString = error.localizedDescription
         }
     }
 }
