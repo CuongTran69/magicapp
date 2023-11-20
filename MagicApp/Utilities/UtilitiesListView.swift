@@ -35,9 +35,8 @@ struct UtilitiesListView: View {
 
 struct UtilitiesCell: View {
     var listModel: ListUtilitiesModel
-    @State var isToggleImage = false
     @State var textChange = ""
-    @State var currency = 0 
+    @State var currency: Int = 0
     
     var body: some View {
         HStack {
@@ -46,11 +45,11 @@ struct UtilitiesCell: View {
                     .font(.headline)
                 if !listModel.isHiddenSub {
                     TextField("Nhập số tiền", text: $textChange)
-                        .keyboardType(.numberPad)
+                        .keyboardType(.decimalPad)
                     HStack {
                         Image(systemName: "arrow.left.arrow.right")
-                        if !textChange.isEmpty, let cur = Int(textChange) {
-                            Text("\(cur * currency) VNĐ")
+                        if !textChange.isEmpty, let cur = Double(textChange) {
+//                            Text("\((cur * currency)) VNĐ")
                         } else {
                             Text("0 VNĐ")
                         }
@@ -58,12 +57,6 @@ struct UtilitiesCell: View {
                 }
             }
             Spacer()
-//            Image(systemName: isToggleImage ? "heart" : "heart.fill")
-        }
-        .onTapGesture {
-            withAnimation { 
-                isToggleImage.toggle()
-            }
         }
         .onAppear {
             firstly { 
@@ -94,7 +87,6 @@ struct UtilitiesCell: View {
             }
         }
     }
-}
 
 struct ListUtilitiesModel: Identifiable, Hashable {
     var id          = UUID().uuidString

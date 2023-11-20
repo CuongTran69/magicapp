@@ -21,12 +21,45 @@
 		3181B1E42B032A3E0068934C /* UtilitiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181B1E32B032A3E0068934C /* UtilitiesListView.swift */; };
 		319199632AD40373005D0C34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319199622AD40373005D0C34 /* NetworkManager.swift */; };
 		319199652AD404EF005D0C34 /* VideoYoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319199642AD404EF005D0C34 /* VideoYoutubeView.swift */; };
+		31946B7D2B04BD37008DE28B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31946B7C2B04BD37008DE28B /* WidgetKit.framework */; };
+		31946B7F2B04BD37008DE28B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31946B7E2B04BD37008DE28B /* SwiftUI.framework */; };
+		31946B822B04BD37008DE28B /* NewWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31946B812B04BD37008DE28B /* NewWidgetBundle.swift */; };
+		31946B842B04BD37008DE28B /* NewWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31946B832B04BD37008DE28B /* NewWidgetLiveActivity.swift */; };
+		31946B862B04BD37008DE28B /* NewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31946B852B04BD37008DE28B /* NewWidget.swift */; };
+		31946B892B04BD38008DE28B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31946B882B04BD38008DE28B /* Assets.xcassets */; };
+		31946B8B2B04BD38008DE28B /* NewWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 31946B872B04BD37008DE28B /* NewWidget.intentdefinition */; };
+		31946B8C2B04BD38008DE28B /* NewWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 31946B872B04BD37008DE28B /* NewWidget.intentdefinition */; };
+		31946B8F2B04BD38008DE28B /* NewWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 31946B7B2B04BD37008DE28B /* NewWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		31D001852AD5666900BF94BE /* VideoYoutubeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D001842AD5666900BF94BE /* VideoYoutubeVM.swift */; };
 		31D001872AD5692600BF94BE /* VideoYoutubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D001862AD5692600BF94BE /* VideoYoutubeModel.swift */; };
 		31D822662AB35A98005BD028 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D822652AB35A98005BD028 /* UIColor+Ext.swift */; };
 		31E763202AD79D4E00345F1B /* BaseAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7631F2AD79D4E00345F1B /* BaseAPIRouter.swift */; };
 		98C58CFF4A8F45A6A87241FD /* Pods_MagicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABA1C1DFA1DEA1D1ADB9EFB /* Pods_MagicApp.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31946B8D2B04BD38008DE28B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 316F2DBC2A8E110E0091EF3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31946B7A2B04BD37008DE28B;
+			remoteInfo = NewWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31946B902B04BD38008DE28B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				31946B8F2B04BD38008DE28B /* NewWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		314D0D172AB83B4E00254725 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -45,6 +78,15 @@
 		3181B1E32B032A3E0068934C /* UtilitiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesListView.swift; sourceTree = "<group>"; };
 		319199622AD40373005D0C34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		319199642AD404EF005D0C34 /* VideoYoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoYoutubeView.swift; sourceTree = "<group>"; };
+		31946B7B2B04BD37008DE28B /* NewWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NewWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		31946B7C2B04BD37008DE28B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		31946B7E2B04BD37008DE28B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		31946B812B04BD37008DE28B /* NewWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWidgetBundle.swift; sourceTree = "<group>"; };
+		31946B832B04BD37008DE28B /* NewWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		31946B852B04BD37008DE28B /* NewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWidget.swift; sourceTree = "<group>"; };
+		31946B872B04BD37008DE28B /* NewWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = NewWidget.intentdefinition; sourceTree = "<group>"; };
+		31946B882B04BD38008DE28B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31946B8A2B04BD38008DE28B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31D001842AD5666900BF94BE /* VideoYoutubeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoYoutubeVM.swift; sourceTree = "<group>"; };
 		31D001862AD5692600BF94BE /* VideoYoutubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoYoutubeModel.swift; sourceTree = "<group>"; };
 		31D822652AB35A98005BD028 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -60,6 +102,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C58CFF4A8F45A6A87241FD /* Pods_MagicApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31946B782B04BD37008DE28B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31946B7F2B04BD37008DE28B /* SwiftUI.framework in Frameworks */,
+				31946B7D2B04BD37008DE28B /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				316F2DC62A8E110E0091EF3D /* MagicApp */,
+				31946B802B04BD37008DE28B /* NewWidget */,
 				316F2DC52A8E110E0091EF3D /* Products */,
 				5EA3DE3230C5C0824F582E69 /* Pods */,
 				7E5D3643D28B5D89D9E352A7 /* Frameworks */,
@@ -124,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				316F2DC42A8E110E0091EF3D /* Cường Cúc.app */,
+				31946B7B2B04BD37008DE28B /* NewWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +225,19 @@
 			path = Serivces;
 			sourceTree = "<group>";
 		};
+		31946B802B04BD37008DE28B /* NewWidget */ = {
+			isa = PBXGroup;
+			children = (
+				31946B812B04BD37008DE28B /* NewWidgetBundle.swift */,
+				31946B832B04BD37008DE28B /* NewWidgetLiveActivity.swift */,
+				31946B852B04BD37008DE28B /* NewWidget.swift */,
+				31946B872B04BD37008DE28B /* NewWidget.intentdefinition */,
+				31946B882B04BD38008DE28B /* Assets.xcassets */,
+				31946B8A2B04BD38008DE28B /* Info.plist */,
+			);
+			path = NewWidget;
+			sourceTree = "<group>";
+		};
 		31D001832AD5663A00BF94BE /* VideoYoutubeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				DABA1C1DFA1DEA1D1ADB9EFB /* Pods_MagicApp.framework */,
+				31946B7C2B04BD37008DE28B /* WidgetKit.framework */,
+				31946B7E2B04BD37008DE28B /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,15 +287,34 @@
 				316F2DC12A8E110E0091EF3D /* Frameworks */,
 				316F2DC22A8E110E0091EF3D /* Resources */,
 				7715C1057C763D2D89BA5087 /* [CP] Embed Pods Frameworks */,
+				31946B902B04BD38008DE28B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				31946B8E2B04BD38008DE28B /* PBXTargetDependency */,
 			);
 			name = MagicApp;
 			productName = MagicApp;
 			productReference = 316F2DC42A8E110E0091EF3D /* Cường Cúc.app */;
 			productType = "com.apple.product-type.application";
+		};
+		31946B7A2B04BD37008DE28B /* NewWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31946B932B04BD38008DE28B /* Build configuration list for PBXNativeTarget "NewWidgetExtension" */;
+			buildPhases = (
+				31946B772B04BD37008DE28B /* Sources */,
+				31946B782B04BD37008DE28B /* Frameworks */,
+				31946B792B04BD37008DE28B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NewWidgetExtension;
+			productName = NewWidgetExtension;
+			productReference = 31946B7B2B04BD37008DE28B /* NewWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -241,6 +328,9 @@
 				TargetAttributes = {
 					316F2DC32A8E110E0091EF3D = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					31946B7A2B04BD37008DE28B = {
+						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
@@ -258,6 +348,7 @@
 			projectRoot = "";
 			targets = (
 				316F2DC32A8E110E0091EF3D /* MagicApp */,
+				31946B7A2B04BD37008DE28B /* NewWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -270,6 +361,14 @@
 				316F2DCF2A8E11100091EF3D /* Preview Assets.xcassets in Resources */,
 				31544B172AB1D2A600E419F2 /* Montserrat-ExtraBold.ttf in Resources */,
 				316F2DCC2A8E11100091EF3D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31946B792B04BD37008DE28B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31946B892B04BD38008DE28B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				319199632AD40373005D0C34 /* NetworkManager.swift in Sources */,
+				31946B8C2B04BD38008DE28B /* NewWidget.intentdefinition in Sources */,
 				31D822662AB35A98005BD028 /* UIColor+Ext.swift in Sources */,
 				31E763202AD79D4E00345F1B /* BaseAPIRouter.swift in Sources */,
 				31505FBD2AE965FA00DC8170 /* SettingView.swift in Sources */,
@@ -340,7 +440,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		31946B772B04BD37008DE28B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31946B822B04BD37008DE28B /* NewWidgetBundle.swift in Sources */,
+				31946B8B2B04BD38008DE28B /* NewWidget.intentdefinition in Sources */,
+				31946B862B04BD37008DE28B /* NewWidget.swift in Sources */,
+				31946B842B04BD37008DE28B /* NewWidgetLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31946B8E2B04BD38008DE28B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31946B7A2B04BD37008DE28B /* NewWidgetExtension */;
+			targetProxy = 31946B8D2B04BD38008DE28B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		316F2DD02A8E11100091EF3D /* Debug */ = {
@@ -461,12 +580,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 772C13B032317BBC295AC789 /* Pods-MagicApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicApp/Preview Content\"";
-				DEVELOPMENT_TEAM = N6YX4DKV6J;
+				DEVELOPMENT_TEAM = L7SFFAPQ3Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MagicApp/Info.plist;
@@ -493,12 +613,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73B996570D269BB8C0AF5F4E /* Pods-MagicApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicApp/Preview Content\"";
-				DEVELOPMENT_TEAM = N6YX4DKV6J;
+				DEVELOPMENT_TEAM = L7SFFAPQ3Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MagicApp/Info.plist;
@@ -515,6 +636,60 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cuozg.MagicApp;
 				PRODUCT_NAME = "Cường Cúc";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		31946B912B04BD38008DE28B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L7SFFAPQ3Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NewWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cuozg.MagicApp.NewWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		31946B922B04BD38008DE28B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L7SFFAPQ3Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NewWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cuozg.MagicApp.NewWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -538,6 +713,15 @@
 			buildConfigurations = (
 				316F2DD32A8E11100091EF3D /* Debug */,
 				316F2DD42A8E11100091EF3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31946B932B04BD38008DE28B /* Build configuration list for PBXNativeTarget "NewWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31946B912B04BD38008DE28B /* Debug */,
+				31946B922B04BD38008DE28B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
